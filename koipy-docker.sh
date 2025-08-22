@@ -16,7 +16,7 @@ setup_environment() {
         echo "创建了 koipy 文件夹。"
     fi
 
-    wget -O ./koipy/config.yaml https://raw.githubusercontent.com/detesion/get-koipy/refs/heads/main/config.example.yaml
+    wget -O ./koipy/config.yaml https://raw.githubusercontent.com/OSNewbie/koipy-yjjb/refs/heads/main/config.example.yaml
     echo "下载 config.yaml 文件。"
 }
 
@@ -51,7 +51,7 @@ build_docker() {
     read -r -p "请输入容器名称：" container_name
     echo "正在拉取 Docker 镜像 . . ."
     docker rm -f "$container_name" &>/dev/null || true
-    docker pull koipy/koipy:latest
+    docker pull koipy/koipy:dev
 }
 
 configure_bot() {
@@ -124,7 +124,7 @@ start_docker() {
     echo "正在启动 Docker 容器 . . ."
     docker run -dit --restart=no --name="$container_name" --hostname="$container_name" \
         -v "$(pwd)/koipy/config.yaml:/app/config.yaml" \
-        --network host koipy/koipy:latest
+        --network host koipy/koipy:dev
     echo
     echo "Docker 容器 $container_name 已启动。"
 }
