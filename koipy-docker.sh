@@ -51,7 +51,7 @@ build_docker() {
     read -r -p "请输入容器名称：" container_name
     echo "正在拉取 Docker 镜像 . . ."
     docker rm -f "$container_name" &>/dev/null || true
-    docker pull koipy/koipy:dev
+    docker pull koipy/koipy:latest
 }
 
 configure_bot() {
