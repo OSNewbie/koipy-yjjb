@@ -124,7 +124,7 @@ start_docker() {
     echo "正在启动 Docker 容器 . . ."
     docker run -dit --restart=no --name="$container_name" --hostname="$container_name" \
         -v "$(pwd)/koipy/config.yaml:/app/config.yaml" \
-        --network host koipy/koipy:dev
+        --network host koipy/koipy:latest
     echo
     echo "Docker 容器 $container_name 已启动。"
 }
