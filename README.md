@@ -38,7 +38,7 @@ apt install wget curl ca-certificates
 
 * 下载并运行脚本
 ```
-bash <(curl -sL https://raw.githubusercontent.com/detesion/get-koipy/refs/heads/main/koipy-docker.sh)
+bash <(curl -sL https://github.com/OSNewbie/koipy-yjjb/blob/koipy-dev/koipy-docker.sh)
 ```
 
 ## Star History
